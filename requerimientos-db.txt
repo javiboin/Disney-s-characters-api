@@ -1,0 +1,41 @@
+Entidades
+    - Personajes
+        Campos
+        - Imagen (blob)
+        - Nombre (varchar 50)
+        - Edad (integer)
+        - Peso (float)
+        - Historia (text)
+        - Peliculas o series Asociadas:
+            (array varchar)
+            [tabla intermedia 
+            (personajes - peliculas, o pepe)]
+
+    - Peliculas
+        Campos 
+        - Imagen (blob)
+        - Titulo (varchar 50)
+        - fecha de creacion (date)
+        - Clasificacion de 1 a 5 estrellas (integer)
+        - Personajes asociados:
+            [tabla intermedia]
+            pepe
+
+    - Genero
+        Campos
+        - Nombre
+        - Imagen
+        - Peliculas Asociadas (pege)
+
+Tablas Intermedias:
+pepe, pege
+
+    pepe: Personajes - Peliculas
+    Campos
+    - id Personaje
+    - id pelicula
+
+    pege: Personajes - Generos
+    Campos
+    - id Personaje
+    - id Genero

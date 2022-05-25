@@ -1,0 +1,44 @@
+Base de datos
+Tablas
+Relaciones
+
+Autenticacion de usuarios
+login 
+Registro
+Rutas
+
+verbos HTTP
+Personajes
+    getAll personajes 
+    endpoint getAll characthers
+    mostrar nombre y url de Imagen
+    CRUD personajes
+    C
+    R
+    U
+    D
+    Mostrar relaciones
+
+    Busquedas
+        GET /characters?name=nombre
+        GET /characters?age=edad
+        GET /characters?movies=idMovie
+
+Verbos en peliculas
+    GET AllMovies
+    traer relacion
+    traer datos relacionados
+
+    Busquedas
+        GET /movies?name=nombre
+        GET /movies?genre=idGenero
+        GET /movies?order=ASC | DESC
+
+Envios de Email
+    Ver sobre SendGrid
+
+Documentacion Swagger
+
+Test Unitarios
+    Mocha + Chai
+    Ver Documentacion relacionada
