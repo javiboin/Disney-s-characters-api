@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const api = require('./routes/api.routes');
+const api = require('./api');
 app.use('/api', api);
 app.use(helmet());
 
