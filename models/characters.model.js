@@ -1,1 +1,18 @@
-console.log('Soy el modelo de personajes');
+module.exports = (sequelize, type) => {
+    return sequelize.define('personajes', {
+        id: {
+            type: type.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        image: type.STRING(500),
+        name: type.STRING(50),
+        age: type.INTEGER,
+        weight: type.FLOAT(6, 2),
+        history: type.STRING(500),
+    }, {
+            sequelize,
+            timestamps: false,
+        }
+    );
+};
