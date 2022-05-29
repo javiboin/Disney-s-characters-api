@@ -1,11 +1,4 @@
-Base de datos
-Tablas
-Relaciones
-
 Autenticacion de usuarios
-login 
-Registro
-Rutas
 
 verbos HTTP
 Personajes
