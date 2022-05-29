@@ -1,6 +1,6 @@
 //sincronizar base de datos
 
-class LoginControllers {
+class UsersControllers {
     static async login(req, res) {
         console.log('login');
     }
@@ -9,4 +9,4 @@ class LoginControllers {
     }
 }
 
-module.exports = LoginControllers;
+module.exports = UsersControllers;

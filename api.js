@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
-const loginRoutes = require('./routes/login.routes');
 const characthersRoutes = require('./routes/characters.routes');
 const moviesRoutes = require('./routes/movies.routes');
+const genreRoutes = require('./routes/genre.routes');
 
 router
-    .use('/', loginRoutes)
     .use('/characters', characthersRoutes)
-    .use('/movies', moviesRoutes);
+    .use('/movies', moviesRoutes)
+    .use('/genre', genreRoutes);
 
 module.exports = router;

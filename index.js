@@ -5,6 +5,8 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
+require('./database/db');
+
 app.get('/', (req, res) => {
     res.send('Holaa mundo')
 })
@@ -12,8 +14,13 @@ app.get('/', (req, res) => {
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const auth = require('./auth');
+app.use('/auth', auth);
+
 const api = require('./api');
 app.use('/api', api);
+
 app.use(helmet());
 
 // SERVER.PORT
