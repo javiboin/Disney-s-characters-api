@@ -99,6 +99,24 @@ class CharactersControllers {
     }
     static async update(req, res) {
         console.log('update');
+        const id = parseInt(req.params.id);
+
+        const Personaje = await Characters.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        if (Personaje) {
+            await Characters.update(req.body, {
+                where: {
+                    id: id
+                }
+            })
+            res.status(200).json({ message: 'Personaje actualizado'});
+        } else {
+            res.status(404).json({ message: 'Personaje no encontrado'});
+        }
     }
     static async delete(req, res) {
         console.log('delete');

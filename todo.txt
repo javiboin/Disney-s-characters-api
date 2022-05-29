@@ -5,7 +5,6 @@ Personajes
     mostrar nombre y url de Imagen
     CRUD personajes
     R
-    U
     D
     Mostrar relaciones
 
