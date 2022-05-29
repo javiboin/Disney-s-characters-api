@@ -120,7 +120,25 @@ class CharactersControllers {
     }
     static async delete(req, res) {
         console.log('delete');
+        const id = parseInt(req.params.id);
+        await Characters.destroy({
+            where : {
+                id: id
+            }
+        })
+        
+        .then((deletedRecord) => {
+            if (deletedRecord === 1) {
+                res.status(200).json({ message: 'Personaje eliminado'});
+            } else {
+                res.status(404).json({ message: 'Personaje no encontrado'});
+            }
+        })
+
+       .catch((error) => {
+            res.status(500).json({ message: 'Error al eliminar el personaje'});
+        }); 
     }
-}
+} 
 
 module.exports = CharactersControllers;

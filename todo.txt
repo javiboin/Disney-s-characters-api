@@ -2,10 +2,7 @@ Autenticacion de usuarios
 
 verbos HTTP
 Personajes
-    mostrar nombre y url de Imagen
-    CRUD personajes
     R
-    D
     Mostrar relaciones
 
     Busquedas
