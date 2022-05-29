@@ -1,12 +1,19 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('generos', {
-        id: {
+    return sequelize.define('MoviesGenre', {
+        id_characters: {
             type: type.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
+            references: {
+                model: 'characters', 
+                key: 'id'
+            }
         },
-        image: type.STRING(500),
-        name: type.STRING(50),
+        id_movies: {
+        type: type.INTEGER,
+        references: {
+            model: 'movies', 
+            key: 'id'
+        }
+        },
     }, {
             sequelize,
             timestamps: false,

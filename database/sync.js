@@ -14,11 +14,11 @@ const MoviesGenre = MoviesGenreModel(sequelize, Sequelize);
 const MoviesCharacters = MoviesCharactersModel(sequelize, Sequelize);
 
 // Relations
-MoviesCharacters.belongsTo(Movies, {foreignKey: 'id_peliculas'});
-MoviesCharacters.belongsTo(Characters, {foreignKey: 'id_personajes'});
+MoviesCharacters.belongsTo(Movies, {foreignKey: 'id_movies'});
+MoviesCharacters.belongsTo(Characters, {foreignKey: 'id_characters'});
 
-MoviesGenre.belongsTo(Movies, {foreignKey: 'id_peliculas'});
-MoviesGenre.belongsTo(Genre, {foreignKey: 'id_generos'});
+MoviesGenre.belongsTo(Movies, {foreignKey: 'id_movies'});
+MoviesGenre.belongsTo(Genre, {foreignKey: 'id_genre'});
 
 // Sync Database
 sequelize.sync({ force: false }).then(() => {
