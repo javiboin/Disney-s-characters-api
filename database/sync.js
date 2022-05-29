@@ -1,11 +1,11 @@
 const { Sequelize } = require('sequelize');
 const { sequelize } = require('./db');
 
-const CharactersModel = require('./models/characters.model');
-const MoviesModel = require('./models/movies.model');
-const GenreModel = require('./models/genre.model');
-const MoviesGenreModel = require('./models/movies_genre.model');
-const MoviesCharactersModel = require('./models/movies_characters.model');
+const CharactersModel = require('../models/characters.model');
+const MoviesModel = require('../models/movies.model');
+const GenreModel = require('../models/genre.model');
+const MoviesGenreModel = require('../models/movies_genre.model');
+const MoviesCharactersModel = require('../models/movies_characters.model');
 
 const Characters = CharactersModel(sequelize, Sequelize);
 const Movies = MoviesModel(sequelize, Sequelize);

@@ -2,8 +2,6 @@ Autenticacion de usuarios
 
 verbos HTTP
 Personajes
-    getAll personajes 
-    endpoint getAll characthers
     mostrar nombre y url de Imagen
     CRUD personajes
     C
@@ -13,8 +11,6 @@ Personajes
     Mostrar relaciones
 
     Busquedas
-        GET /characters?name=nombre
-        GET /characters?age=edad
         GET /characters?movies=idMovie
 
 Verbos en peliculas
