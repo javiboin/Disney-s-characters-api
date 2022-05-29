@@ -82,8 +82,20 @@ class CharactersControllers {
     }
     static async create(req, res) {
         console.log('create');
-        //
-        //const character = await 
+
+        const { image, name, age, weight, history } = req.body;
+        try {
+            await Characters.create({
+                image: image,
+                name: name,
+                age: age,
+                weight: weight,
+                history: history
+            });
+            res.status(200).json({ message: 'Personaje creado'});	
+        } catch (error) {
+            res.status(500).json({ message: 'Error al crear el personaje'});
+        }
     }
     static async update(req, res) {
         console.log('update');

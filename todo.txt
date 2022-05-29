@@ -4,7 +4,6 @@ verbos HTTP
 Personajes
     mostrar nombre y url de Imagen
     CRUD personajes
-    C
     R
     U
     D
