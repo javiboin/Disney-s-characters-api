@@ -79,6 +79,7 @@ class CharactersControllers {
         // buscar en la tabla intermedia los valores de busqueda
         // tomar esa cadena de datos y realizar una busqueda en la tabla de personajes segun id del array
         // enviar la respuesta
+        
     }
     static async create(req, res) {
         console.log('create');
@@ -99,6 +100,7 @@ class CharactersControllers {
     }
     static async update(req, res) {
         console.log('update');
+
         const id = parseInt(req.params.id);
 
         const Personaje = await Characters.findOne({

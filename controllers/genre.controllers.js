@@ -33,12 +33,62 @@ class GenreControllers {
     }
     static async create(req, res) {
         console.log('create');
+
+        const { name, image } = req.body;
+        try {
+            const genre = await Genre.create({
+                name: name,
+                image: image
+            });
+            res.status(200).json({ message: 'Genero creado' });
+        } catch (error) {
+            res.status(500).json({ message: 'Error al crear el genero' });
+        }
     }
     static async update(req, res) {
         console.log('update');
+
+        const id = parseInt(req.params.id);
+
+        const Genero = await Genre.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        if (Genero) {
+            await Genre.update(req.body, {
+                where: {
+                    id: id
+                }
+            })
+            res.status(200).json({ message: 'Genero actualizado'});
+        } else {
+            res.status(404).json({ message: 'Genero no encontrado'});
+        }
     }
     static async delete(req, res) {
         console.log('delete');
+
+        const id = parseInt(req.params.id);
+
+        await Genre.destroy({
+            where: {
+                id: id
+            }
+        })
+
+        .then((deletedRecord) => {
+            if (deletedRecord === 1) {
+                res.status(200).json({ message: 'Genero eliminado'});
+            } else {
+                res.status(404).json({ message: 'Genero no encontrado'});
+            }
+        })
+
+        .catch((error) => {
+            res.status(500).json({ message: 'Error al eliminar el genero'});
+        })
     }
 }
 
