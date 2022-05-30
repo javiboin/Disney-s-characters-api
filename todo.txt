@@ -9,7 +9,6 @@ Personajes
         GET /characters?movies=idMovie
 
 Verbos en peliculas
-    GET AllMovies
     traer relacion
     traer datos relacionados
 

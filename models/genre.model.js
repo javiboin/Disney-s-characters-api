@@ -1,12 +1,12 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('Genre', {
+    return sequelize.define('Genres', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        image: type.STRING(500),
         name: type.STRING(50),
+        image: type.STRING(500)
     }, {
             sequelize,
             timestamps: false,

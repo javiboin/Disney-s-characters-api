@@ -9,7 +9,7 @@ const MoviesCharactersModel = require('../models/movies_characters.model');
 
 const Characters = CharactersModel(sequelize, Sequelize);
 const Movies = MoviesModel(sequelize, Sequelize);
-const Genre = GenreModel(sequelize, Sequelize);
+const Genres = GenreModel(sequelize, Sequelize);
 const MoviesGenre = MoviesGenreModel(sequelize, Sequelize);
 const MoviesCharacters = MoviesCharactersModel(sequelize, Sequelize);
 
@@ -18,7 +18,7 @@ MoviesCharacters.belongsTo(Movies, {foreignKey: 'id_movies'});
 MoviesCharacters.belongsTo(Characters, {foreignKey: 'id_characters'});
 
 MoviesGenre.belongsTo(Movies, {foreignKey: 'id_movies'});
-MoviesGenre.belongsTo(Genre, {foreignKey: 'id_genre'});
+MoviesGenre.belongsTo(Genres, {foreignKey: 'id_genre'});
 
 // Sync Database
 sequelize.sync({ force: false }).then(() => {
@@ -28,7 +28,7 @@ sequelize.sync({ force: false }).then(() => {
 module.exports = {
     Characters,
     Movies,
-    Genre,
+    Genres,
     MoviesGenre,
     MoviesCharacters
 };

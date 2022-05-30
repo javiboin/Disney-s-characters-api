@@ -8,8 +8,7 @@ module.exports = (sequelize, type) => {
         image: type.STRING(500),
         title: type.STRING(50),
         created: type.DATE,
-        weight: type.FLOAT(6, 2),
-        history: type.STRING(500),
+        rating: type.INTEGER,
     }, {
             sequelize,
             timestamps: false,

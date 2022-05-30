@@ -1,10 +1,10 @@
 // conexion a la base de datos
-const { Genre } = require('../database/sync');
+const { Genres } = require('../database/sync');
 
 class GenreControllers {
     static async getAll(req, res) {
         console.log('getAll');
-        const generos = await Genre.findAll();
+        const generos = await Genres.findAll();
         res.status(200).json({
             title: 'Lista de generos',
             data: generos
@@ -13,7 +13,7 @@ class GenreControllers {
     static async getById(req, res) {
         console.log('getById');	
         const id = parseInt(req.params.id);
-        const generos = await Genre.findOne({
+        const generos = await Genres.findOne({
             where: {
                 id: id
             }
@@ -36,7 +36,7 @@ class GenreControllers {
 
         const { name, image } = req.body;
         try {
-            const genre = await Genre.create({
+            const genre = await Genres.create({
                 name: name,
                 image: image
             });
@@ -50,14 +50,14 @@ class GenreControllers {
 
         const id = parseInt(req.params.id);
 
-        const Genero = await Genre.findOne({
+        const Genero = await Genres.findOne({
             where: {
                 id: id
             }
         });
 
         if (Genero) {
-            await Genre.update(req.body, {
+            await Genres.update(req.body, {
                 where: {
                     id: id
                 }
@@ -72,7 +72,7 @@ class GenreControllers {
 
         const id = parseInt(req.params.id);
 
-        await Genre.destroy({
+        await Genres.destroy({
             where: {
                 id: id
             }
