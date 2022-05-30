@@ -7,3 +7,8 @@ Archivo de Importación para Postman
 ```
 ../docs/Disney's-Characters.postman_collection.json
 ```
+
+# Repo GitHub
+```
+https://github.com/javiboin/Disney-s-characters-api
+```

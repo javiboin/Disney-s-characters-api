@@ -7,11 +7,15 @@ const GenreModel = require('../models/genre.model');
 const MoviesGenreModel = require('../models/movies_genre.model');
 const MoviesCharactersModel = require('../models/movies_characters.model');
 
+const UsersModel = require('../models/users.model');
+
 const Characters = CharactersModel(sequelize, Sequelize);
 const Movies = MoviesModel(sequelize, Sequelize);
 const Genres = GenreModel(sequelize, Sequelize);
 const MoviesGenre = MoviesGenreModel(sequelize, Sequelize);
 const MoviesCharacters = MoviesCharactersModel(sequelize, Sequelize);
+
+const Users = UsersModel(sequelize, Sequelize);
 
 // Relations
 MoviesCharacters.belongsTo(Movies, {foreignKey: 'id_movies'});
@@ -30,5 +34,6 @@ module.exports = {
     Movies,
     Genres,
     MoviesGenre,
-    MoviesCharacters
+    MoviesCharacters,
+    Users
 };
